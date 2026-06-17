@@ -52,7 +52,10 @@ useEffect(() => {
     // user type
     const userType = role.includes("admin") ? "admin" :
                      role.includes("user") ? "user" : null;
-
+                     
+    console.log("matchingRoles:", getMatchingRoles());
+    console.log("userTypeRoute route:", route);
+    console.log("userTypeRoute userType:", userType);
     if (route && userType) {
       setIsAuthorized(true);
       setUserType(userType);
@@ -64,8 +67,6 @@ useEffect(() => {
     }
 
     setRouteResolved(true);
-    console.log("matchingRoles:", getMatchingRoles());
-    console.log("userTypeRoute:", route);
   } else if (ssoDisabled) {
     setIsAuthorized(true);
     setUserType("admin");

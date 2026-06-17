@@ -32,7 +32,7 @@ useEffect(() => {
   
   if (authenticated && keycloakInstance && !ssoDisabled) {
     const matchingRoles = getMatchingRoles();
-
+    console.log("matchingRoles1:", matchingRoles);
     if (matchingRoles.length === 0) {
       setIsAuthorized(false);
       setUserType(null);

@@ -64,12 +64,14 @@ useEffect(() => {
     }
 
     setRouteResolved(true);
-
+    console.log("matchingRoles:", getMatchingRoles());
+    console.log("userTypeRoute:", route);
   } else if (ssoDisabled) {
     setIsAuthorized(true);
     setUserType("admin");
     setUserTypeRoute("stc");
     setRouteResolved(true);
+    console.log("Gone here 1");
   }
 }, [authenticated, keycloakInstance, ssoDisabled, getMatchingRoles]);
   if (!routeResolved) {

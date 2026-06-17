@@ -10,12 +10,12 @@ import axios from "axios";
 
 
 // Production Context Paths
-// const contextPath = "https://backend-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/api/dhmarketplace/stc/v1/";
-// const contextPathV2 = "https://backend-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/api/dhmarketplace/stc/voucher/v1/";
+const contextPath = "https://backend-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/api/dhmarketplace/stc/v1/";
+const contextPathV2 = "https://backend-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/api/dhmarketplace/stc/voucher/v1/";
 
 // DH ENV Context Paths
-const contextPath = "http://backend.rahul-uideployment.svc.cluster.local:8080/api/dhmarketplace/stc/v1/";
-const contextPathV2 = "http://backend.rahul-uideployment.svc.cluster.local:8080/api/dhmarketplace/stc/voucher/v1/";
+// const contextPath = "http://backend.rahul-uideployment.svc.cluster.local:8080/api/dhmarketplace/stc/v1/";
+// const contextPathV2 = "http://backend.rahul-uideployment.svc.cluster.local:8080/api/dhmarketplace/stc/voucher/v1/";
 
 class DHMarketPlaceService {
   getAllProduct(productRequest) {

@@ -80,15 +80,15 @@ export const AuthProvider = ({ children }) => {
       console.error("Environment Variable REACT_APP_SSO_ROLE not passed");
 
     return keycloakInstance.tokenParsed?.resource_access?.[
-      import.meta.env.VITE_APP_SSO_CLIENT_ID
+      ssoEnvVariable?.SSO_CLIENT_ID
     ]?.roles.includes(role);
   };
 
   const getMatchingRoles = () => {
     if (ssoDisabled) return [];
 
-    // const rolesFromEnv =  ssoEnvVariable?.SSO_ROLE;
-    const rolesFromEnv =  import.meta.env.VITE_APP_SSO_ROLE;
+    const rolesFromEnv =  ssoEnvVariable?.SSO_ROLE;
+    // const rolesFromEnv =  import.meta.env.VITE_APP_SSO_ROLE;
     if (!rolesFromEnv) return [];
 
     const requiredRoles = rolesFromEnv.split(",").map((r) => r.trim());

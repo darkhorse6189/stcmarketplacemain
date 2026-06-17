@@ -32,7 +32,6 @@ useEffect(() => {
   
   if (authenticated && keycloakInstance && !ssoDisabled) {
     const matchingRoles = getMatchingRoles();
-    console.log("matchingRoles1:", matchingRoles);
     if (matchingRoles.length === 0) {
       setIsAuthorized(false);
       setUserType(null);
@@ -52,10 +51,7 @@ useEffect(() => {
     // user type
     const userType = role.includes("admin") ? "admin" :
                      role.includes("user") ? "user" : null;
-                     
-    console.log("matchingRoles:", getMatchingRoles());
-    console.log("userTypeRoute route:", route);
-    console.log("userTypeRoute userType:", userType);
+
     if (route && userType) {
       setIsAuthorized(true);
       setUserType(userType);
@@ -72,7 +68,6 @@ useEffect(() => {
     setUserType("admin");
     setUserTypeRoute("stc");
     setRouteResolved(true);
-    console.log("Gone here 1");
   }
 }, [authenticated, keycloakInstance, ssoDisabled, getMatchingRoles]);
   if (!routeResolved) {

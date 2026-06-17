@@ -1,0 +1,21 @@
+.contact-form-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form-field .select-trigger {
+  width: 100%;
+}

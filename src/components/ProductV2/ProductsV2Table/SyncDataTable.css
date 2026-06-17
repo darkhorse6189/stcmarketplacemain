@@ -1,0 +1,27 @@
+
+.csv-upload {
+  display: inline-flex;
+  align-items: center;
+  padding: 20px 90px;
+  border: 1.5px dashed #4A9688;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #4A9688;
+  background: rgba(74, 150, 136, 0.08);
+  transition: all 0.2s ease;
+  margin-left: 20px;
+}
+
+.csv-upload:hover {
+  background: rgba(74, 150, 136, 0.15);
+  border-color: #3d7f73;
+}
+
+.csv-upload-text {
+  white-space: nowrap;
+}
+
+.csv-upload-container {
+  margin-bottom: 10px;
+}

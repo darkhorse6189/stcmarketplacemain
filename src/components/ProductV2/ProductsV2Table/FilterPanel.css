@@ -1,0 +1,30 @@
+.contacts-table-filter-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.contacts-table-filter-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contacts-table-filter-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.contacts-table-filter-select {
+  width: 12rem;
+}
+
+.filterBgColor button{
+  background-color: #ffffff;
+}
+
+.filterBgColor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

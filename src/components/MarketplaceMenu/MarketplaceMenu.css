@@ -1,0 +1,23 @@
+.marketplace-menu {
+  display: flex;
+  padding: 4px 10px;
+  /* background-color: #f1f1f1; */
+  margin-bottom: 2px;
+}
+
+.marketplace-menu a {
+  color: #47007E(0, 0%, 3%);
+  margin-left: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.marketplace-menu a:hover {
+  background-color: #ddd;
+}
+
+.marketplace-menu a.active {
+  background-color: #47007E(0, 0%, 3%);
+  color: white;
+}

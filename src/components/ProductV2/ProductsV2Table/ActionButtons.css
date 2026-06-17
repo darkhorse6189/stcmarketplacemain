@@ -1,0 +1,9 @@
+.contacts-table-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contacts-table-search {
+  max-width: 15rem;
+}

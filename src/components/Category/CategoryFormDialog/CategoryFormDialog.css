@@ -1,0 +1,5 @@
+.contact-form-dialog-content {
+  max-width: 56rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}

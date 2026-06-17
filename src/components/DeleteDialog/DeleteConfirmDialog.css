@@ -1,0 +1,9 @@
+.delete-confirm-action {
+  background-color: #47007E;
+  color: hsl(0, 0%, 98%);
+}
+
+.delete-confirm-action:hover {
+  background-color: #560594;
+  color: hsl(0, 0%, 98%);
+}

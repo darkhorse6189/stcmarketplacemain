@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 56px;              /* ✅ FIXED HEIGHT */
+  display: flex;
+  align-items: center;       /* vertical centering */
+  padding: 0 24px;           /* remove vertical padding */
+  background-color: #47007E;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 98%);
+}

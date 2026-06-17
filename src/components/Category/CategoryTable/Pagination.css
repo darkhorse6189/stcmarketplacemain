@@ -1,0 +1,25 @@
+.contacts-table-pagination {
+  border-top: 1px solid hsl(var(--border));
+  background-color: hsl(var(--card));
+  padding: 1rem 1.5rem;
+}
+
+.contacts-table-pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contacts-table-pagination-button {
+  height: 2rem;
+  width: 2rem;
+}
+
+.contacts-table-pagination-ellipsis {
+  cursor: default;
+}
+
+.contacts-table-pagination-ellipsis:hover {
+  background-color: transparent;
+}

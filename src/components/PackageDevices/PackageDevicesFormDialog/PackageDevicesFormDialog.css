@@ -1,0 +1,52 @@
+.contact-form-dialog-content {
+  max-width: 56rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.contact-form-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.contact-form-badges {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.contact-form-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.contact-form-badge-close {
+  height: 0.75rem;
+  width: 0.75rem;
+  cursor: pointer;
+}
+
+.contact-form-field .select-trigger {
+  width: 100%;
+}
+

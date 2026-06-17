@@ -1,0 +1,28 @@
+.contacts-table-body {
+  flex: 1;
+  overflow: auto;
+}
+
+.contacts-table-header-row {
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.contacts-table-header-row:hover {
+  background-color: transparent;
+}
+
+.contacts-table-cell-checkbox {
+  width: 3rem;
+}
+
+.contacts-table-header-cell {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.productNotFoundMessage {
+  padding: 24px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}

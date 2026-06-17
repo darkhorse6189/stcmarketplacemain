@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(0, 0%, 3%);
+  color: white;
+  padding: 12px 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.marketplace-menu {
+  display: flex;
+  padding: 4px 10px;
+  background-color: #F5F3FF;
+}
+
+.marketplace-menu a {
+  color: hsl(0, 0%, 3%);
+  margin-left: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.marketplace-menu a:hover {
+  background-color: #ddd;
+}
+
+.marketplace-menu a.active {
+  background-color: #47007E;
+  color: white;
+}

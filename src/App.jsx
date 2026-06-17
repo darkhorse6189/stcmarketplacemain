@@ -53,9 +53,6 @@ useEffect(() => {
     const userType = role.includes("admin") ? "admin" :
                      role.includes("user") ? "user" : null;
 
-
-                     
-
     if (route && userType) {
       setIsAuthorized(true);
       setUserType(userType);

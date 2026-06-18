@@ -107,7 +107,8 @@ export const AuthProvider = ({ children }) => {
     //   keycloakInstance?.tokenParsed?.resource_access?.[
     //     import.meta.env.VITE_APP_SSO_CLIENT_ID
     //   ]?.roles || [];      
-
+    console.log("keycloakInstance: ", keycloakInstance)
+     console.log("keycloakInstance?.tokenParsed:", keycloakInstance?.tokenParsed); 
     return requiredRoles.filter((role) => userRoles.includes(role));
   };
 

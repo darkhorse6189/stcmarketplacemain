@@ -94,8 +94,19 @@ useEffect(() => {
                   authenticated={authenticated}
                   userTypeRoute={userTypeRoute}
                 />
-              ) : (
+              ) : userTypeRoute === "du" ? (
                 <Navigate to="/du" replace />
+              ) : (
+                // userTypeRoute is null → unauthorized user, show the alert modal
+                <STCMarketplace
+                  isAuthorized={false}
+                  showAlert={showAlert}
+                  userType={null}
+                  setShowAlert={setShowAlert}
+                  logout={logout}
+                  authenticated={authenticated}
+                  userTypeRoute={null}
+                />
               )
             }
           />

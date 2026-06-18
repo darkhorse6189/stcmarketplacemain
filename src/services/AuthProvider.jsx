@@ -19,10 +19,6 @@ export const AuthProvider = ({ children }) => {
 
       const ssoConfig = data?.data?.ReactEnvironmentVariableResponse;
       setSsoEnvVariable(ssoConfig);
-      console.log("ssoConfig:", ssoConfig);
-      console.log("ssoConfig.SSO_URL:", ssoConfig.SSO_URL);
-      console.log("ssoConfig.SSO_REALM:", ssoConfig.SSO_REALM);
-      console.log("ssoConfig.SSO_CLIENT_ID:", ssoConfig.SSO_CLIENT_ID);
 
       if (
         ssoConfig.SSO_URL === null ||
@@ -60,7 +56,6 @@ export const AuthProvider = ({ children }) => {
 
           try {
             const decodedUser = jwtDecode(keycloakInstance.token);
-            console.log('Decoded User:', decodedUser);
             if (!sessionStorage.getItem("userId")) {
               sessionStorage.setItem("userId", JSON.stringify(decodedUser.preferred_username));
             }
@@ -107,8 +102,6 @@ export const AuthProvider = ({ children }) => {
     //   keycloakInstance?.tokenParsed?.resource_access?.[
     //     import.meta.env.VITE_APP_SSO_CLIENT_ID
     //   ]?.roles || [];      
-    console.log("keycloakInstance: ", keycloakInstance)
-     console.log("keycloakInstance?.tokenParsed:", keycloakInstance?.tokenParsed); 
     return requiredRoles.filter((role) => userRoles.includes(role));
   };
 

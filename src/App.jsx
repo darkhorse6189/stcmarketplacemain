@@ -32,7 +32,6 @@ useEffect(() => {
   
   if (authenticated && keycloakInstance && !ssoDisabled) {
     const matchingRoles = getMatchingRoles();
-    console.log("Matching Roles:", matchingRoles);
     if (matchingRoles.length === 0) {
       setIsAuthorized(false);
       setUserType(null);
@@ -74,8 +73,6 @@ useEffect(() => {
   if (!routeResolved) {
   return null; // or <LoadingSpinner />
 }
-
-  console.log("userTypeRoute:", userTypeRoute);
 
   return (
     <TooltipProvider>

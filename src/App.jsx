@@ -75,7 +75,7 @@ useEffect(() => {
   return null; // or <LoadingSpinner />
 }
 
-
+  console.log("userTypeRoute:", userTypeRoute);
 
   return (
     <TooltipProvider>

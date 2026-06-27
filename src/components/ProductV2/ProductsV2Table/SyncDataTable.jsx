@@ -7,7 +7,7 @@ import SockJS from "sockjs-client";
 import { Client } from "@stomp/stompjs";
 import StatusModal from "./StatusModal";
 
-const LOCK_BASE = "https://filelocking-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in";
+const LOCK_BASE = "http://localhost:8082";
 const MAX_FILE_SIZE_MB = 5;
 const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
 const MY_ID = sessionStorage.getItem("userId");

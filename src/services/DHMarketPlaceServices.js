@@ -5,13 +5,13 @@ import axios from "axios";
 // const addProductImageContextPath = "https://stc-backend-0-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/camel/api/dhmarketplace/stc/v1/";
 
 // Local Context Paths
-// const contextPath = "http://localhost:8080/api/dhmarketplace/stc/v1/";
-// const contextPathV2 = "http://localhost:8080/api/dhmarketplace/stc/voucher/v1/";
+const contextPath = "http://localhost:8080/api/dhmarketplace/stc/v1/";
+const contextPathV2 = "http://localhost:8080/api/dhmarketplace/stc/voucher/v1/";
 
 
 // Production Context Paths
-const contextPath = "https://backend-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/api/dhmarketplace/stc/v1/";
-const contextPathV2 = "https://backend-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/api/dhmarketplace/stc/voucher/v1/";
+// const contextPath = "https://backend-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/api/dhmarketplace/stc/v1/";
+// const contextPathV2 = "https://backend-rahul-uideployment.apps.nprdc-ocp.dhdigital.co.in/api/dhmarketplace/stc/voucher/v1/";
 
 // DH ENV Context Paths
 // const contextPath = "http://backend.rahul-uideployment.svc.cluster.local:8080/api/dhmarketplace/stc/v1/";

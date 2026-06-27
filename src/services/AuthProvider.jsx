@@ -14,35 +14,36 @@ export const AuthProvider = ({ children }) => {
   const [keycloakInstance, setKeycloakInstance] = useState();
   const [ssoDisabled, setSsoDisabled] = useState(false);
   useEffect(() => {
-    dhmarketplaceServiceInstance.getAuthEnviromentVariable().then((data) => {
+    // dhmarketplaceServiceInstance.getAuthEnviromentVariable().then((data) => {
       //calling backend to retrive SSO url
 
-      const ssoConfig = data?.data?.ReactEnvironmentVariableResponse;
-      setSsoEnvVariable(ssoConfig);
+      // const ssoConfig = data?.data?.ReactEnvironmentVariableResponse;
+      // setSsoEnvVariable(ssoConfig);
 
       if (
-        ssoConfig.SSO_URL === null ||
-        ssoConfig.SSO_REALM === null ||
-        ssoConfig.SSO_CLIENT_ID === null
-      //   !import.meta.env.VITE_APP_SSO_URL ||
-      // !import.meta.env.VITE_APP_SSO_REALM ||
-      // !import.meta.env.VITE_APP_SSO_CLIENT_ID
+        // ssoConfig.SSO_URL === null ||
+        // ssoConfig.SSO_REALM === null ||
+        // ssoConfig.SSO_CLIENT_ID === null
+        !import.meta.env.VITE_APP_SSO_URL ||
+      !import.meta.env.VITE_APP_SSO_REALM ||
+      !import.meta.env.VITE_APP_SSO_CLIENT_ID
       ) {
         setSsoDisabled(true);
         setAuthenticated(true); // Auto-authenticate when SSO is disabled
         return;
       }
 
-      const kc = createKeycloakInstance(ssoConfig);
-      // const ssoConfig = {
-      //   VITE_APP_SSO_URL: import.meta.env.VITE_APP_SSO_URL,
-      //   VITE_APP_SSO_REALM: import.meta.env.VITE_APP_SSO_REALM,
-      //   VITE_APP_SSO_CLIENT_ID: import.meta.env.VITE_APP_SSO_CLIENT_ID
-      // }
       // const kc = createKeycloakInstance(ssoConfig);
+      const ssoConfig = {
+        VITE_APP_SSO_URL: import.meta.env.VITE_APP_SSO_URL,
+        VITE_APP_SSO_REALM: import.meta.env.VITE_APP_SSO_REALM,
+        VITE_APP_SSO_CLIENT_ID: import.meta.env.VITE_APP_SSO_CLIENT_ID
+      }
+      const kc = createKeycloakInstance(ssoConfig);
       setKeycloakInstance(kc); // passing it to createKeycloakInstance/AuthenticationConfig,js
-    });
-  }, []);
+    }, []);
+  // }, []);
+  
 
   useEffect(() => {
     if (keycloakInstance && !ssoDisabled) {
@@ -75,7 +76,8 @@ export const AuthProvider = ({ children }) => {
   const checkRole = () => {
     if (ssoDisabled) return true;
 
-    const role = ssoEnvVariable?.SSO_ROLE;
+    // const role = ssoEnvVariable?.SSO_ROLE;
+    const role =  import.meta.env.VITE_APP_SSO_ROLE;
     if (!role)
       console.error("Environment Variable REACT_APP_SSO_ROLE not passed");
 
@@ -87,21 +89,21 @@ export const AuthProvider = ({ children }) => {
   const getMatchingRoles = () => {
     if (ssoDisabled) return [];
 
-    const rolesFromEnv =  ssoEnvVariable?.SSO_ROLE;
-    // const rolesFromEnv =  import.meta.env.VITE_APP_SSO_ROLE;
+    // const rolesFromEnv =  ssoEnvVariable?.SSO_ROLE;
+    const rolesFromEnv =  import.meta.env.VITE_APP_SSO_ROLE;
     if (!rolesFromEnv) return [];
 
     const requiredRoles = rolesFromEnv.split(",").map((r) => r.trim());
 
-      const userRoles =
-        keycloakInstance?.tokenParsed?.resource_access?.[
-          ssoEnvVariable?.SSO_CLIENT_ID
-      ]?.roles || [];      
+      // const userRoles =
+      //   keycloakInstance?.tokenParsed?.resource_access?.[
+      //     ssoEnvVariable?.SSO_CLIENT_ID
+      // ]?.roles || [];      
 
-    // const userRoles =
-    //   keycloakInstance?.tokenParsed?.resource_access?.[
-    //     import.meta.env.VITE_APP_SSO_CLIENT_ID
-    //   ]?.roles || [];      
+    const userRoles =
+      keycloakInstance?.tokenParsed?.resource_access?.[
+        import.meta.env.VITE_APP_SSO_CLIENT_ID
+      ]?.roles || [];      
     return requiredRoles.filter((role) => userRoles.includes(role));
   };
 
